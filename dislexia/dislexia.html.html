@@ -1,0 +1,202 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Corrección de un test</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .result {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+
+    <script type="text/javascript">
+        var myVar;
+        myVar = setTimeout(function() {
+            $(".question").hide(500);
+            $(".result").hide(500);
+            mensaje = "Ha caducado su juego, es posible que necesite ser más rápdi@, intentelo de nuevo!";
+            document.getElementById('texto').textContent = mensaje;
+            $(".result").show(500);
+            return;
+        }, 600000);
+
+        function myStopFunction() {
+            clearTimeout(myVar);
+        }
+
+        function enviar() {
+
+            myStopFunction();
+
+            var afirmativas = 0
+            var negativas = 0
+
+            var mensaje = ""
+
+            <!-- 1º pregunta-->
+            if (document.getElementById('p11').checked == true) {
+                afirmativas++;
+            } else {
+                negativas++;
+            }
+
+            <!-- 2º pregunta-->
+            if (document.getElementById('p21').checked == true) {
+                afirmativas++;
+            } else {
+                negativas++;
+            }
+
+            <!-- 3º pregunta-->
+            if (document.getElementById('p32').checked == true) {
+                afirmativas = afirmativas + 3;
+            } else {
+                negativas++;
+            }
+
+            <!-- 4º pregunta-->
+            if (document.getElementById('p41').checked == true) {
+                afirmativas++;
+            } else {
+                negativas++;
+            }
+
+            <!-- 5º pregunta-->
+            if (document.getElementById('p51').checked == true) {
+                afirmativas++;
+            } else {
+                negativas++;
+            }
+
+            <!-- 6º pregunta-->
+            if (document.getElementById('p61').checked == true) {
+                afirmativas++;
+            } else {
+                negativas++;
+            }
+
+            $(".result").show(1000);
+            $(".question").hide(1000);
+
+
+            if (afirmativas >= 3) {
+                mensaje = "Sentimos comentarle que se han detectado anomalias en sus respuestas y le rogamos que acuda a un médico especializado para que           le haga un chequeo más exaustivo. En el menú principal si lo desea contamos con la opción de pedir cita, gracias por confiar              en nosotros.";
+            }
+            else 
+                mensaje = " Tras revisar los resultados hemos comprobado que no existen anomalias suficientes para recomendarle ir a un especialista, gracias por confiar en nosotros.";
+            document.getElementById('texto').textContent = mensaje;
+        }
+
+        function volver() {
+            location.reload(true)
+        }
+    </script>
+</head>
+
+<body>
+    <div class="question">
+        <form name="preguntas">
+            <div id=”dislexia”>
+                <div id="pregunta1">
+                    <p>
+                        <!-- Primera pregunta -->
+                    </p>
+                    <img src="uno.jpg" alt="imagenDetectora" width="150" height="150">
+                    <p>
+                        1.- ¿A dónde señala la flecha? </p>
+                    <p>
+                        <input type="radio" name="pregunta1" id="p11" value="false"> Abajo </p>
+                    <p>
+                        <input type="radio" name="pregunta1" id="p12" value="true"> Arriba </p>
+
+                </div>
+                <div id="pregunta2">
+                    <!-- Segunda pregunta -->
+
+                    <img src="dos.jpg" alt="imagenDetectora" width="150" height="150">
+                    <p>
+                        <p>
+                            2.- ¿Qué mano levanta la chica?
+                        </p>
+                        <p>
+                            <input type="radio" name="pregunta2" id="p22" value="true"> Derecha </p>
+                        <p>
+                            <input type="radio" name="pregunta2" id="p21" value="false"> Izquierda </p>
+
+                </div>
+                <div id="pregunta3">
+                    <!-- Tercera pregunta -->
+
+                    <img src="tres.jpg" alt="imagenDetectora" width="150" height="150">
+                    <p>
+                        3.- ¿A dónde apunta la flecha?
+                    </p>
+                    <p>
+                        <input type="radio" name="pregunta3" id="p31" value="false"> Arriba </p>
+                    <p>
+                        <input type="radio" name="pregunta3" id="p32" value="true"> Abajo </p>
+
+                </div>
+                <div id="pregunta4">
+                    <!-- Cuarta pregunta -->
+
+                    <img src="cuatro.jpg" alt="imagenDetectora" width="150" height="150">
+                    <p>
+                        4.- ¿Qué mano tiene la chica en la cara?
+                    </p>
+                    <p>
+                        <input type="radio" name="pregunta4" id="p41" value="false"> Derecha </p>
+                    <p>
+                        <input type="radio" name="pregunta4" id="p42" value="true"> Izquierda </p>
+
+                </div>
+                <div id="pregunta5">
+                    <!-- Quinta pregunta -->
+
+                    <img src="cinco.jpg" alt="imagenDetectora" width="150" height="150">
+                    <p>
+                        5.- ¿A dónde se dirige la flecha?
+                    </p>
+                    <p>
+                        <input type="radio" name="pregunta5" id="p52" value="true"> Derecha </p>
+                    <p>
+                        <input type="radio" name="pregunta5" id="p51" value="false"> Izquierda </p>
+
+                </div>
+                <div id="pregunta6">
+                    <!-- sexta pregunta -->
+
+                    <img src="seis.jpg" alt="imagenDetectora" width="150" height="150">
+                    <p>
+                        6.- ¿Qué pata tiene levantada el gato?
+                    </p>
+                    <p>
+                        <input type="radio" name="pregunta6" id="p61" value="false"> Izquierda </p>
+                    <p>
+                        <input type="radio" name="pregunta6" id="p62" value="true"> Derecha </p>
+                    <p>
+
+                </div>
+            </div>
+        </form>
+        <form name="boton">
+            <button class="btn pink" type="button" onclick="enviar()"><span> Enviar </span></button>
+        </form>
+        <br>
+    </div>
+
+    <div class="result">
+        <form name="resultado" action="">
+            <h1>Resultado</h1>
+            <p id="texto"></p>
+        </form>
+        <form name="botonAtras">
+            <button class="btn pink" type="button" onclick="volver()"><span> Volver a realizar el test </span></button>
+        </form>
+    </div>
+
+</body>
+
+</html>

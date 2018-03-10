@@ -1,0 +1,230 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+<title>Corrección de un test</title>
+    <style>
+        .result {
+            display: none;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script language="JavaScript">
+function enviar(){
+var afirmativas = 0
+var negativas = 0
+
+var mensaje = ""
+
+<!-- 1º pregunta-->
+if (document.getElementById('p11').checked==true) {
+   	afirmativas++;
+}else{
+   	negativas++;
+}
+      
+<!-- 2º pregunta-->
+if (document.getElementById('p21').checked==true) {
+   	afirmativas++;
+}else{
+	negativas++;
+}
+      
+<!-- 3º pregunta-->
+if (document.getElementById('p32').checked==true) {
+	afirmativas = afirmativas+3;
+}else{
+	negativas++;
+}
+  
+  <!-- 4º pregunta-->
+if (document.getElementById('p41').checked==true) {
+	afirmativas++;
+}else{
+	negativas++;
+}
+  
+  <!-- 5º pregunta-->
+if (document.getElementById('p51').checked==true) {
+	afirmativas++;
+}else{
+	negativas++;
+}
+  
+  <!-- 6º pregunta-->
+if (document.getElementById('p61').checked==true) {
+	afirmativas++;
+}else{
+	negativas++;
+}
+      
+  <!-- 7º pregunta-->
+if (document.getElementById('p71').checked==true) {
+	afirmativas++;
+}else{
+	negativas++;
+}
+  
+  <!-- 8º pregunta-->
+if (document.getElementById('p81').checked==true) {
+	afirmativas++;
+}else{
+	negativas++;
+}
+  
+  <!-- 9º pregunta-->
+if (document.getElementById('p91').checked==true) {
+	afirmativas++;
+}else{
+	negativas++;
+}
+  
+  <!-- 10º pregunta-->
+if (document.getElementById('p101').checked==true || document.getElementById('p103').checked==true) {
+	afirmativas = afirmativas+3;
+}else{
+	negativas++;
+}
+  
+  <!-- 11º pregunta-->
+if (document.getElementById('p111').checked==true) {
+	afirmativas++;
+}else{
+	negativas++;
+}
+  
+$(".result").show(1000);
+$(".question").hide(1000);   
+    
+    
+    if (afirmativas >= 13){
+        mensaje = "Se han detectado algunas anomalias en sus resultados, le recomendamos que acuda a su medico para hacerse un analisis mas exaustivo, si desea puede acudir a la opcion de cita previa, gracias por confiar en nosotros.";
+    }else{
+        mensaje = "No se ha detectado ninguna anomalia en sus resultados, aun así le recomendamos que acuda a su medico para hacerse un chequeo mas exaustivo, si desea puede acudir a la opcion de cita previa, gracias por confiar en nosotros.";
+    }
+    document.getElementById('texto').textContent = mensaje;
+    
+    
+    
+}
+    function volver(){
+        
+        
+        $(".result").hide(1000);
+$(".question").show(1000);
+
+
+    }
+</script>
+</head>
+<body>
+    <div class="question">
+<form name="preguntas">
+<div id=”esquizofrenia”>
+<p><!-- Primera pregunta -->
+    1.- ¿Has visto alguna vez irritaciones o algo extraño en tu piel que los demás han dicho que no veían y tú sufrías?  </p>
+<p>
+    <input type="radio" name="pregunta1" id="p11" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta1" id="p12" value="false"> No </p>
+<p>
+<!-- Segunda pregunta -->2.- ¿Sufres constantemente a la hora de comunicarte con los demás porque te cueste expresarte?
+</p>
+<p>
+    <input type="radio" name="pregunta2" id="p21" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta2" id="p22" value="false"> No </p>
+<p>
+<!-- Tercera pregunta -->3.- ¿Qué ves en la imagen?
+</p>
+  <img src="esquizo1.png" alt="imagenDetectora" width="100%" height="100%">
+<p>
+    <input type="radio" name="pregunta3" id="p31" value="false"> Un mono y un león </p>
+<p>
+    <input type="radio" name="pregunta3" id="p32" value="true"> Un árbol </p>
+  <p>
+    <input type="radio" name="pregunta3" id="p33" value="false"> Un río con peces y pájaros </p>
+  <p>
+    <input type="radio" name="pregunta3" id="p34" value="false"> No soy capaz de distinguir lo que veo
+ </p>
+  <p>
+<!-- cuarta pregunta -->4.- ¿Sientes que te cuesta concentrarte en lo que haces últimamente? 
+</p>
+<p>
+    <input type="radio" name="pregunta4" id="p41" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta4" id="p42" value="false"> No </p>
+  
+  <p>
+<!-- quinta pregunta -->5.- ¿Has perdido la práctica de cosas que hayas aprendido últimamente?
+</p>
+<p>
+    <input type="radio" name="pregunta5" id="p51" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta5" id="p52" value="false"> No </p>
+  <p>
+<!-- sexta pregunta -->6.- ¿Sientes que la gente no te entiende?
+</p>
+<p>
+    <input type="radio" name="pregunta6" id="p61" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta6" id="p62" value="false"> No </p>
+  <p>
+<!-- septima pregunta -->7.- ¿Te has alejado de tu vida social últimamente?
+</p>
+<p>
+    <input type="radio" name="pregunta7" id="p71" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta7" id="p72" value="false"> No </p>
+  <p>
+<!-- oct pregunta -->8.- ¿Has reconsiderado tu vida laboral actual? (Trabajo, estudios...)
+</p>
+<p>
+    <input type="radio" name="pregunta8" id="p81" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta8" id="p82" value="false"> No </p>
+  <p>
+<!-- nov pregunta -->9.- ¿Sientes que los demás te persiguen o que tienen motivos ocultos hacia ti?
+</p>
+<p>
+    <input type="radio" name="pregunta9" id="p91" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta9" id="p92" value="false"> No </p>
+  <p>
+<!-- dec pregunta -->10.- ¿Cuánto hace que no te dedicas tiempo a ti y tu entorno general?
+</p>
+<p>
+    <input type="radio" name="pregunta10" id="p101" value="true"> Hace menos de 6 meses </p>
+<p>
+    <input type="radio" name="pregunta10" id="p102" value="false"> Siempre me he cuidado igual </p>
+  <p>
+    <input type="radio" name="pregunta10" id="p103" value="true"> Hace más de 6 meses </p>
+  <p>
+<!-- undec pregunta -->11.- ¿Te estás automedicando por no saber qué te pasa?
+</p>
+<p>
+    <input type="radio" name="pregunta11" id="p111" value="true"> Si </p>
+<p>
+    <input type="radio" name="pregunta11" id="p112" value="false"> No </p>
+</div>
+</form>
+<form name="boton">
+    <button class="btn pink" type="button" onclick="enviar()"><span> Enviar </span></button>
+</form>
+<br>
+        </div>
+    <div class="result">
+<form name="resultado" action="">
+    <h1>Resultado</h1>
+   <p> 
+    <p id="texto"></p>
+    </p>
+</form>
+    <form name="botonAtras">
+    <button class="btn pink" type="button" onclick="volver()"><span> Volver a realizar el test </span></button>
+</form>
+    </div>
+    
+</body>
+</html> 
+
