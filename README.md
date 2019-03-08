@@ -2,11 +2,11 @@
 
 <p>Realizado por:
 
-Miguel Ángel Arroyo Clemente
+Miguel Ángel Arroyo Clemente | Github : @mcmiguelac
 
-Jose Ramón Lozano Pinilla
+Jose Ramón Lozano Pinilla | Github : @JoserraLP
 
-Isabel Najarro Borrego
+Isabel Najarro Borrego | Github: @inajarrob
 
 Enrique Vilchez Campillejo
 </p>
